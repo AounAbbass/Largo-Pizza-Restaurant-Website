@@ -1,11 +1,8 @@
 import React from 'react'
-import Hero from '../Components/Hero/Hero'
 
 const Menu = () => {
   return (
-    <div>
-       <Hero />
-    </div>
+    <div>Menu</div>
   )
 }
 
