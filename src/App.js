@@ -8,6 +8,9 @@ import Menu from "./pages/Menu.jsx";
 import Contact from "./pages/Contact.jsx";
 import Cart from "./pages/Cart.jsx";
 import Home from "./pages/Home.jsx";
+import Footer from "./Components/Footer/Footer.jsx";
+import Banner_1 from './Components/Assets/Banner_1.png'
+import Banner_2 from './Components/Assets/Banner_2.png'
 
 function App() {
   return (
@@ -17,14 +20,15 @@ function App() {
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/deals" element={<MenuCategory category="deals" />} />
-        <Route path="/products" element={<Products />}>
+        <Route path="/deals" element={<MenuCategory banner={Banner_1} category="deals" />} />
+        <Route path="/products" banner={Banner_2} element={<Products />}>
           <Route path=":productId" element={<Products />} />
         </Route>
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />}/>
         <Route path="/login" element={<LoginSignup />}/>
         </Routes>
+      <Footer/>
       </BrowserRouter>
     </div>
   );

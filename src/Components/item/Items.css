@@ -1,20 +1,20 @@
 .item{
-    width: 300px;
+    width: 400px;
+    font-size: 18px;
 }
 
-.item p{
-    margin: 6px 0px;
+.item-name {
+    font-size: 20px;
+    font-weight: 500;
 }
 
-.item-prices{
-    display: flex;
-    gap: 20px;
-}
-
-item-price-new{
+.item-price-1{
     color: #374151;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
+    display: flex;
+    margin-bottom: 10px;
+    
 }
 
 item-price-old{

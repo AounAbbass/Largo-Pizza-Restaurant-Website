@@ -1,0 +1,31 @@
+.menuCategory-banner{
+    display: block;
+    margin: 30px auto;
+    width: 100%;
+}
+
+.menuCategory-indexSort{
+    display: flex;
+    margin: 0px 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menuCategory-sort{
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: 1px solid #888;
+    margin-right: -20px;
+}
+
+
+.menuCategory-indexSort p span {
+  font-weight: 600;  
+}
+
+.menuCategory-products {
+    margin: 20px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+

@@ -3,18 +3,30 @@ import './Items.css'
 
 const Items = (props) => {
   return (
-    <div className='items'>
-      <img src={props.image} alt=""/>
-      <p>{props.name}</p>
-      <div className='item-prices'>
-        <div className='item-price-new'>
-          {props.new_price}
+    <div className='item'>
+      <img src={props.image} alt="" />
+      <div className='item-name'>
+        <p>{props.name}</p>
+      </div>
+      <p>{props.description1}</p>
+      <div className='item-price-1'>
+          {props.price1}
         </div>
-        <div className='item-price-old'>
-          {props.old_price}
+      <p>{props.description2}</p>
+      <div className='item-price-1'>
+          {props.price2}
+        </div>
+      <p>{props.description3}</p>
+      <div className='item-price-1'>
+          {props.price3}
+        </div>
+      <p>{props.description4}</p>
+
+        <div className='item-price-1'>
+          {props.price4}
         </div>
       </div>
-    </div>
+
   )
 }
 
