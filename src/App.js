@@ -2,7 +2,7 @@ import "./App.css";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MenuCategory from "./pages/MenuCategory.jsx";
-import Products from "./pages/Products.jsx";
+import Product from "./pages/Product.jsx";
 import LoginSignup from "./pages/LoginSignup.jsx";
 import Menu from "./pages/Menu.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -21,8 +21,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/deals" element={<MenuCategory banner={Banner_1} category="deals" />} />
-        <Route path="/products" banner={Banner_2} element={<Products />}>
-          <Route path=":productId" element={<Products />} />
+        <Route path="/product" banner={Banner_2} element={<Product />}>
+          <Route path=":productId" element={<Product />} />
         </Route>
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />}/>
