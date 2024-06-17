@@ -3,6 +3,7 @@ import './Items.css'
 import { Link } from 'react-router-dom'
 
 const Items = (props) => {
+  console.log("Props here: ", props)
   return (
     <div className='item'>
  
@@ -28,8 +29,8 @@ const Items = (props) => {
           {props.price4}
         </div>
       </div>
-
   )
+
 }
 
 export default Items

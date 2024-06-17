@@ -1,18 +1,32 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './ProductDisplay.css'
 import star_icon from "../Assets/star_icon.png"
 import star_dull_icon from "../Assets/star_dull_icon.png"
+import { MenuContext } from '../../context/MenuContext'
 
 const ProductDisplay = (props) => {
   const { product } = props;
-  console.log("Product displays here:", product)
+  console.log("Product here is: ", product)
+
+  const { addToCart } = useContext(MenuContext);
+  const [showPrice, setShowPrice] = useState(null);
+
+  useEffect(() => {
+    // This effect will run whenever showPrice changes
+  }, [showPrice]);
+
+  const handleClick = (val) => {
+    setShowPrice(val);
+  };
+
+
   return (
     <div className="ProductDisplay">
-    
-        <div className="ProductDisplay-img">
-          <img className='ProductDisplay-main-img' src={product.image} />
-        </div>
-  
+
+      <div className="ProductDisplay-img">
+        <img className='ProductDisplay-main-img' src={product.image} />
+      </div>
+
       <div className="ProductDisplay-right">
         <h1>{product.name}</h1>
         <div className="ProductDisplay-right-star">
@@ -24,10 +38,18 @@ const ProductDisplay = (props) => {
           <p>(220)</p>
         </div>
         <div className="ProductDisplay-right-prices">
-          <div className="ProductDisplay-right-price-1">{product.price1}</div>
-          <div className="ProductDisplay-right-price-1">{product.price2}</div>
-          <div className="ProductDisplay-right-price-1">{product.price3}</div>
-          <div className="ProductDisplay-right-price-1">{product.price4}</div>
+          {showPrice === 1 && (
+            <div className="ProductDisplay-right-price-1">{product.price1}</div>
+          )}
+          {showPrice === 2 && (
+            <div className="ProductDisplay-right-price-1">{product.price2}</div>
+          )}
+          {showPrice === 3 && (
+            <div className="ProductDisplay-right-price-1">{product.price3}</div>
+          )}
+          {showPrice === 4 && (
+            <div className="ProductDisplay-right-price-1">{product.price4}</div>
+          )}
         </div>
         <div className="ProductDisplay-right-description">
           <p>Any 2 Pizzas for the Price of One!</p>
@@ -35,13 +57,13 @@ const ProductDisplay = (props) => {
         <div className="ProductDisplay-right-size1">
           <h1>Select Size</h1>
           <div className="ProductDisplay-right-size">
-            <div>S</div>
-            <div>M</div>
-            <div>L</div>
-            <div>XL</div>
+            <div onClick={() => handleClick(1)}>S</div>
+            <div onClick={() => handleClick(2)}>M</div>
+            <div onClick={() => handleClick(3)}>L</div>
+            <div onClick={() => handleClick(4)}>XL</div>
           </div>
         </div>
-        <button>ADD TO CART</button>
+        <button onClick={() => { addToCart(product.id) }}>ADD TO CART</button>
         <p className='ProductDisplay-right-category'><span>Category: </span>Deals, Pizza, {product.name}</p>
         <p className='ProductDisplay-right-category'><span>Tags: </span>Deals, Latest</p>
       </div>

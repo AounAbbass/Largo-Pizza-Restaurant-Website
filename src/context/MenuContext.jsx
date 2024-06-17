@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react'
 import all_product from '../Components/Assets/all_product';
-import data_product from '../Components/Assets/data';
+
 
 export const MenuContext = createContext(null);
 
@@ -15,10 +15,17 @@ const MenuContextProvider = (props) => {
     }
 
     const [cartItems, setCartItems] = useState(getDefaultCart());
-    const contextValue = { all_product, cartItems};
 
-    console.log(cartItems);
+    const addToCart = (itemId) => {
+        setCartItems((prev)=>({...prev, [itemId]:prev[itemId]+1}))
+        console.log(cartItems);
+    }
 
+    const removeFromCart = (itemId) => {
+        setCartItems((prev)=>({...prev, [itemId]:prev[itemId]-1}))
+    }
+
+    const contextValue = { all_product, cartItems, removeFromCart, addToCart};
 
     return (
         <MenuContext.Provider value={contextValue}>

@@ -9,11 +9,16 @@ import SimilarProducts from '../Components/SimilarProducts/SimilarProducts';
 
 const Product = () => {
 
-const {all_product, data_product}= useContext(MenuContext);
-console.log(all_product, data_product)
+const {all_product}= useContext(MenuContext);
+
 const {productId} = useParams();
-const product = all_product.find((e)=> e.id === Number(productId));
-console.log("Product Id Here: ", product)
+
+
+
+ 
+const product =  all_product.find((e) => e.id === Number(productId));
+  
+
   return (
     <div>
      <Breadcrumbs product={product}/>

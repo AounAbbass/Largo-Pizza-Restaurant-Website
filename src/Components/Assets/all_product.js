@@ -3,6 +3,7 @@ import p2_img from "./Any 2 Deal.png";
 import p3_img from "./Manager Special Deal.png";
 import p4_img from "./Sub Special Deal.png";
 
+
 let all_product = [
   {
     id: 1,
@@ -46,7 +47,6 @@ let all_product = [
     price1: 18.99,
     price2: 21.99,
   },
-  
 ];
 
 export default all_product;
